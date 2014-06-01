@@ -3,7 +3,7 @@
 
 1. Slides are in this repository.
 2. [`ImageLoader` modification gist](https://gist.github.com/scottdweber/9799142).
-3. Sample app code (coming soon).
+3. [Sample app code](https://github.com/scottdweber/EffectiveVolley-SampleApp).
 
 [scottweber.com](http://scottweber.com/)  
 [+ScottWeberD](https://google.com/+ScottWeberD)  

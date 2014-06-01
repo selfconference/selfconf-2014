@@ -12,3 +12,9 @@ Introduction to Twitter Bootstrap: [Live Site] (http://introtobootstrap.azureweb
 - [Vince Speelman](http://vinspee.me)
 	### Creating Design Systems That Work
 	[Slides](https://speakerdeck.com/vinspee/creating-design-systems-that-work)
+
+-[Dylan Swartz](https://twitter.com/dylan_swartz)
+    ### TDD Mobile Apps with Ionic
+    [Slides (slideshare)](http://www.slideshare.net/dylanswartz/ionic-slidedeck)
+    [Slides (pdf)](https://github.com/dylanswartz/self-conference-minecraft-app/raw/master/ionic-slide-deck.pdf)
+    [Code](https://github.com/dylanswartz/self-conference-minecraft-app)

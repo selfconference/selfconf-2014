@@ -1,0 +1,578 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		24381E8D19108F7E00F3D9D3 /* WAKViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 24381E8C19108F7E00F3D9D3 /* WAKViewControllerSpec.m */; };
+		24381E8F19117C6100F3D9D3 /* WAKAppDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 24381E8E19117C6100F3D9D3 /* WAKAppDelegateSpec.m */; };
+		2442BCB4190DFFEA00D9ED33 /* WAKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2442BCB2190DFFEA00D9ED33 /* WAKViewController.m */; };
+		2442BCB5190DFFEA00D9ED33 /* WAKViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2442BCB3190DFFEA00D9ED33 /* WAKViewController.xib */; };
+		245B5BB4190CA34F00536C33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 245B5BB3190CA34F00536C33 /* Foundation.framework */; };
+		245B5BB6190CA34F00536C33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 245B5BB5190CA34F00536C33 /* CoreGraphics.framework */; };
+		245B5BB8190CA34F00536C33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 245B5BB7190CA34F00536C33 /* UIKit.framework */; };
+		245B5BBE190CA34F00536C33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 245B5BBC190CA34F00536C33 /* InfoPlist.strings */; };
+		245B5BC0190CA34F00536C33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B5BBF190CA34F00536C33 /* main.m */; };
+		245B5BC4190CA34F00536C33 /* WAKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B5BC3190CA34F00536C33 /* WAKAppDelegate.m */; };
+		245B5BC6190CA34F00536C33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 245B5BC5190CA34F00536C33 /* Images.xcassets */; };
+		245B5BCD190CA34F00536C33 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 245B5BCC190CA34F00536C33 /* XCTest.framework */; };
+		245B5BCE190CA34F00536C33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 245B5BB3190CA34F00536C33 /* Foundation.framework */; };
+		245B5BCF190CA34F00536C33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 245B5BB7190CA34F00536C33 /* UIKit.framework */; };
+		245B5BD7190CA35000536C33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 245B5BD5190CA35000536C33 /* InfoPlist.strings */; };
+		245B5BE5190CB02700536C33 /* WAKWeatherServiceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B5BE4190CB02700536C33 /* WAKWeatherServiceSpec.m */; };
+		245B5BE8190CB0A200536C33 /* WAKWeatherService.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B5BE7190CB0A200536C33 /* WAKWeatherService.m */; };
+		4E0673E2B0BB473D941A4949 /* libPods-WeatherApiKata.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A88418DDE65D458185FF6930 /* libPods-WeatherApiKata.a */; };
+		8AE49EE51BDC4561AF28B86A /* libPods-WeatherApiKataTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAF8D1651E94E8DAE16BE44 /* libPods-WeatherApiKataTests.a */; };
+		C96916A319299D1300B34FF4 /* SampleResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = C96916A219299D1300B34FF4 /* SampleResponse.json */; };
+		C98A88FB19293D4A00E08AAE /* WAKWeatherServiceOHHTTPStubsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C98A88FA19293D4A00E08AAE /* WAKWeatherServiceOHHTTPStubsSpec.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		245B5BD0190CA35000536C33 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 245B5BA8190CA34F00536C33 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 245B5BAF190CA34F00536C33;
+			remoteInfo = WeatherApiKata;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		24381E8C19108F7E00F3D9D3 /* WAKViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAKViewControllerSpec.m; sourceTree = "<group>"; };
+		24381E8E19117C6100F3D9D3 /* WAKAppDelegateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAKAppDelegateSpec.m; sourceTree = "<group>"; };
+		2442BCB1190DFFEA00D9ED33 /* WAKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAKViewController.h; sourceTree = "<group>"; };
+		2442BCB2190DFFEA00D9ED33 /* WAKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAKViewController.m; sourceTree = "<group>"; };
+		2442BCB3190DFFEA00D9ED33 /* WAKViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WAKViewController.xib; sourceTree = "<group>"; };
+		245B5BB0190CA34F00536C33 /* WeatherApiKata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApiKata.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		245B5BB3190CA34F00536C33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		245B5BB5190CA34F00536C33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		245B5BB7190CA34F00536C33 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		245B5BBB190CA34F00536C33 /* WeatherApiKata-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WeatherApiKata-Info.plist"; sourceTree = "<group>"; };
+		245B5BBD190CA34F00536C33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		245B5BBF190CA34F00536C33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		245B5BC1190CA34F00536C33 /* WeatherApiKata-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeatherApiKata-Prefix.pch"; sourceTree = "<group>"; };
+		245B5BC2190CA34F00536C33 /* WAKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WAKAppDelegate.h; sourceTree = "<group>"; };
+		245B5BC3190CA34F00536C33 /* WAKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WAKAppDelegate.m; sourceTree = "<group>"; };
+		245B5BC5190CA34F00536C33 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		245B5BCB190CA34F00536C33 /* WeatherApiKataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherApiKataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		245B5BCC190CA34F00536C33 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		245B5BD4190CA35000536C33 /* WeatherApiKataTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WeatherApiKataTests-Info.plist"; sourceTree = "<group>"; };
+		245B5BD6190CA35000536C33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		245B5BE4190CB02700536C33 /* WAKWeatherServiceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAKWeatherServiceSpec.m; sourceTree = "<group>"; };
+		245B5BE6190CB0A200536C33 /* WAKWeatherService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAKWeatherService.h; sourceTree = "<group>"; };
+		245B5BE7190CB0A200536C33 /* WAKWeatherService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAKWeatherService.m; sourceTree = "<group>"; };
+		3AAF8D1651E94E8DAE16BE44 /* libPods-WeatherApiKataTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeatherApiKataTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A8009C5C2BC40E6B31F8867 /* Pods-WeatherApiKata.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApiKata.xcconfig"; path = "Pods/Pods-WeatherApiKata.xcconfig"; sourceTree = "<group>"; };
+		A88418DDE65D458185FF6930 /* libPods-WeatherApiKata.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeatherApiKata.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C96916A219299D1300B34FF4 /* SampleResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SampleResponse.json; sourceTree = "<group>"; };
+		C98A88FA19293D4A00E08AAE /* WAKWeatherServiceOHHTTPStubsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAKWeatherServiceOHHTTPStubsSpec.m; sourceTree = "<group>"; };
+		DC3012D4AD5448CBB83E161F /* Pods-WeatherApiKataTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApiKataTests.xcconfig"; path = "Pods/Pods-WeatherApiKataTests.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		245B5BAD190CA34F00536C33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				245B5BB6190CA34F00536C33 /* CoreGraphics.framework in Frameworks */,
+				245B5BB8190CA34F00536C33 /* UIKit.framework in Frameworks */,
+				245B5BB4190CA34F00536C33 /* Foundation.framework in Frameworks */,
+				4E0673E2B0BB473D941A4949 /* libPods-WeatherApiKata.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		245B5BC8190CA34F00536C33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				245B5BCD190CA34F00536C33 /* XCTest.framework in Frameworks */,
+				245B5BCF190CA34F00536C33 /* UIKit.framework in Frameworks */,
+				245B5BCE190CA34F00536C33 /* Foundation.framework in Frameworks */,
+				8AE49EE51BDC4561AF28B86A /* libPods-WeatherApiKataTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		245B5BA7190CA34F00536C33 = {
+			isa = PBXGroup;
+			children = (
+				245B5BB9190CA34F00536C33 /* WeatherApiKata */,
+				245B5BD2190CA35000536C33 /* WeatherApiKataTests */,
+				245B5BB2190CA34F00536C33 /* Frameworks */,
+				245B5BB1190CA34F00536C33 /* Products */,
+				8A8009C5C2BC40E6B31F8867 /* Pods-WeatherApiKata.xcconfig */,
+				DC3012D4AD5448CBB83E161F /* Pods-WeatherApiKataTests.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		245B5BB1190CA34F00536C33 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				245B5BB0190CA34F00536C33 /* WeatherApiKata.app */,
+				245B5BCB190CA34F00536C33 /* WeatherApiKataTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		245B5BB2190CA34F00536C33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				245B5BB3190CA34F00536C33 /* Foundation.framework */,
+				245B5BB5190CA34F00536C33 /* CoreGraphics.framework */,
+				245B5BB7190CA34F00536C33 /* UIKit.framework */,
+				245B5BCC190CA34F00536C33 /* XCTest.framework */,
+				A88418DDE65D458185FF6930 /* libPods-WeatherApiKata.a */,
+				3AAF8D1651E94E8DAE16BE44 /* libPods-WeatherApiKataTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		245B5BB9190CA34F00536C33 /* WeatherApiKata */ = {
+			isa = PBXGroup;
+			children = (
+				245B5BC2190CA34F00536C33 /* WAKAppDelegate.h */,
+				245B5BC3190CA34F00536C33 /* WAKAppDelegate.m */,
+				2442BCB1190DFFEA00D9ED33 /* WAKViewController.h */,
+				2442BCB2190DFFEA00D9ED33 /* WAKViewController.m */,
+				2442BCB3190DFFEA00D9ED33 /* WAKViewController.xib */,
+				245B5BE6190CB0A200536C33 /* WAKWeatherService.h */,
+				245B5BE7190CB0A200536C33 /* WAKWeatherService.m */,
+				245B5BC5190CA34F00536C33 /* Images.xcassets */,
+				245B5BBA190CA34F00536C33 /* Supporting Files */,
+			);
+			path = WeatherApiKata;
+			sourceTree = "<group>";
+		};
+		245B5BBA190CA34F00536C33 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				245B5BBB190CA34F00536C33 /* WeatherApiKata-Info.plist */,
+				245B5BBC190CA34F00536C33 /* InfoPlist.strings */,
+				245B5BBF190CA34F00536C33 /* main.m */,
+				245B5BC1190CA34F00536C33 /* WeatherApiKata-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		245B5BD2190CA35000536C33 /* WeatherApiKataTests */ = {
+			isa = PBXGroup;
+			children = (
+				C96916A119299CED00B34FF4 /* Files */,
+				245B5BE4190CB02700536C33 /* WAKWeatherServiceSpec.m */,
+				C98A88FA19293D4A00E08AAE /* WAKWeatherServiceOHHTTPStubsSpec.m */,
+				24381E8C19108F7E00F3D9D3 /* WAKViewControllerSpec.m */,
+				24381E8E19117C6100F3D9D3 /* WAKAppDelegateSpec.m */,
+				245B5BD3190CA35000536C33 /* Supporting Files */,
+			);
+			path = WeatherApiKataTests;
+			sourceTree = "<group>";
+		};
+		245B5BD3190CA35000536C33 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				245B5BD4190CA35000536C33 /* WeatherApiKataTests-Info.plist */,
+				245B5BD5190CA35000536C33 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C96916A119299CED00B34FF4 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				C96916A219299D1300B34FF4 /* SampleResponse.json */,
+			);
+			name = Files;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		245B5BAF190CA34F00536C33 /* WeatherApiKata */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 245B5BDC190CA35000536C33 /* Build configuration list for PBXNativeTarget "WeatherApiKata" */;
+			buildPhases = (
+				E1A49C10CE2549A9BA3B9531 /* Check Pods Manifest.lock */,
+				245B5BAC190CA34F00536C33 /* Sources */,
+				245B5BAD190CA34F00536C33 /* Frameworks */,
+				245B5BAE190CA34F00536C33 /* Resources */,
+				F851D23593E040B5BD505495 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeatherApiKata;
+			productName = WeatherApiKata;
+			productReference = 245B5BB0190CA34F00536C33 /* WeatherApiKata.app */;
+			productType = "com.apple.product-type.application";
+		};
+		245B5BCA190CA34F00536C33 /* WeatherApiKataTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 245B5BDF190CA35000536C33 /* Build configuration list for PBXNativeTarget "WeatherApiKataTests" */;
+			buildPhases = (
+				2EDC6725046B45AEBCAA5705 /* Check Pods Manifest.lock */,
+				245B5BC7190CA34F00536C33 /* Sources */,
+				245B5BC8190CA34F00536C33 /* Frameworks */,
+				245B5BC9190CA34F00536C33 /* Resources */,
+				3B712ADF535A4DE5B6282839 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				245B5BD1190CA35000536C33 /* PBXTargetDependency */,
+			);
+			name = WeatherApiKataTests;
+			productName = WeatherApiKataTests;
+			productReference = 245B5BCB190CA34F00536C33 /* WeatherApiKataTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		245B5BA8190CA34F00536C33 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = WAK;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Detroit Labs";
+				TargetAttributes = {
+					245B5BCA190CA34F00536C33 = {
+						TestTargetID = 245B5BAF190CA34F00536C33;
+					};
+				};
+			};
+			buildConfigurationList = 245B5BAB190CA34F00536C33 /* Build configuration list for PBXProject "WeatherApiKata" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 245B5BA7190CA34F00536C33;
+			productRefGroup = 245B5BB1190CA34F00536C33 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				245B5BAF190CA34F00536C33 /* WeatherApiKata */,
+				245B5BCA190CA34F00536C33 /* WeatherApiKataTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		245B5BAE190CA34F00536C33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2442BCB5190DFFEA00D9ED33 /* WAKViewController.xib in Resources */,
+				245B5BBE190CA34F00536C33 /* InfoPlist.strings in Resources */,
+				245B5BC6190CA34F00536C33 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		245B5BC9190CA34F00536C33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C96916A319299D1300B34FF4 /* SampleResponse.json in Resources */,
+				245B5BD7190CA35000536C33 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2EDC6725046B45AEBCAA5705 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3B712ADF535A4DE5B6282839 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-WeatherApiKataTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1A49C10CE2549A9BA3B9531 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F851D23593E040B5BD505495 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-WeatherApiKata-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		245B5BAC190CA34F00536C33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2442BCB4190DFFEA00D9ED33 /* WAKViewController.m in Sources */,
+				245B5BE8190CB0A200536C33 /* WAKWeatherService.m in Sources */,
+				245B5BC4190CA34F00536C33 /* WAKAppDelegate.m in Sources */,
+				245B5BC0190CA34F00536C33 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		245B5BC7190CA34F00536C33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C98A88FB19293D4A00E08AAE /* WAKWeatherServiceOHHTTPStubsSpec.m in Sources */,
+				24381E8F19117C6100F3D9D3 /* WAKAppDelegateSpec.m in Sources */,
+				245B5BE5190CB02700536C33 /* WAKWeatherServiceSpec.m in Sources */,
+				24381E8D19108F7E00F3D9D3 /* WAKViewControllerSpec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		245B5BD1190CA35000536C33 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 245B5BAF190CA34F00536C33 /* WeatherApiKata */;
+			targetProxy = 245B5BD0190CA35000536C33 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		245B5BBC190CA34F00536C33 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				245B5BBD190CA34F00536C33 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		245B5BD5190CA35000536C33 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				245B5BD6190CA35000536C33 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		245B5BDA190CA35000536C33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		245B5BDB190CA35000536C33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		245B5BDD190CA35000536C33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A8009C5C2BC40E6B31F8867 /* Pods-WeatherApiKata.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WeatherApiKata/WeatherApiKata-Prefix.pch";
+				INFOPLIST_FILE = "WeatherApiKata/WeatherApiKata-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		245B5BDE190CA35000536C33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A8009C5C2BC40E6B31F8867 /* Pods-WeatherApiKata.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WeatherApiKata/WeatherApiKata-Prefix.pch";
+				INFOPLIST_FILE = "WeatherApiKata/WeatherApiKata-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		245B5BE0190CA35000536C33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC3012D4AD5448CBB83E161F /* Pods-WeatherApiKataTests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WeatherApiKata.app/WeatherApiKata";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WeatherApiKata/WeatherApiKata-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "WeatherApiKataTests/WeatherApiKataTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		245B5BE1190CA35000536C33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC3012D4AD5448CBB83E161F /* Pods-WeatherApiKataTests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WeatherApiKata.app/WeatherApiKata";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WeatherApiKata/WeatherApiKata-Prefix.pch";
+				INFOPLIST_FILE = "WeatherApiKataTests/WeatherApiKataTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		245B5BAB190CA34F00536C33 /* Build configuration list for PBXProject "WeatherApiKata" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				245B5BDA190CA35000536C33 /* Debug */,
+				245B5BDB190CA35000536C33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		245B5BDC190CA35000536C33 /* Build configuration list for PBXNativeTarget "WeatherApiKata" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				245B5BDD190CA35000536C33 /* Debug */,
+				245B5BDE190CA35000536C33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		245B5BDF190CA35000536C33 /* Build configuration list for PBXNativeTarget "WeatherApiKataTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				245B5BE0190CA35000536C33 /* Debug */,
+				245B5BE1190CA35000536C33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 245B5BA8190CA34F00536C33 /* Project object */;
+}

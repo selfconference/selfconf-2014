@@ -21,4 +21,4 @@ Introduction to Twitter Bootstrap: [Live Site] (http://introtobootstrap.azureweb
 
 - [Adam Goodman](https://twitter.com/akgood) 
     ### Making Web Development "Secure By Default"
-    [Slides](http://duo.sc/1l13226)
+    [Slides](http://duo.sc/1jN2Z5b)

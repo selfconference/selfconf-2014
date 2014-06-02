@@ -13,8 +13,12 @@ Introduction to Twitter Bootstrap: [Live Site] (http://introtobootstrap.azureweb
 	### Creating Design Systems That Work
 	[Slides](https://speakerdeck.com/vinspee/creating-design-systems-that-work)
 
--[Dylan Swartz](https://twitter.com/dylan_swartz)
+- [Dylan Swartz](https://twitter.com/dylan_swartz)
     ### TDD Mobile Apps with Ionic
     [Slides (slideshare)](http://www.slideshare.net/dylanswartz/ionic-slidedeck)
     [Slides (pdf)](https://github.com/dylanswartz/self-conference-minecraft-app/raw/master/ionic-slide-deck.pdf)
     [Code](https://github.com/dylanswartz/self-conference-minecraft-app)
+
+- [Adam Goodman](https://twitter.com/akgood) 
+    ### Making Web Development "Secure By Default"
+    [Slides](http://duo.sc/1l13226)

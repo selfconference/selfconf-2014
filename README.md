@@ -23,3 +23,6 @@ Introduction to Twitter Bootstrap: [Live Site] (http://introtobootstrap.azureweb
     [Slides (pdf)](https://github.com/dylanswartz/self-conference-minecraft-app/raw/master/ionic-slide-deck.pdf)
     [Code](https://github.com/dylanswartz/self-conference-minecraft-app)
 
+- [Adam Goodman](https://twitter.com/akgood) 
+    ### Making Web Development "Secure By Default"
+    [Slides](http://duo.sc/1jN2Z5b)

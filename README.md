@@ -12,7 +12,6 @@ Introduction to Twitter Bootstrap: [Live Site] (http://introtobootstrap.azureweb
 - [Nayan Hajratwala](http://twitter.com/nhajratw)
     ### [Agile: from Principles to Practice](https://speakerdeck.com/nhajratw/agile-from-principles-to-practice)
 
-
 - [Vince Speelman](http://vinspee.me)
 	### Creating Design Systems That Work
 	[Slides](https://speakerdeck.com/vinspee/creating-design-systems-that-work)
@@ -26,3 +25,8 @@ Introduction to Twitter Bootstrap: [Live Site] (http://introtobootstrap.azureweb
 - [Adam Goodman](https://twitter.com/akgood) 
     ### Making Web Development "Secure By Default"
     [Slides](http://duo.sc/1jN2Z5b)
+
+- [Les Orchard](https://twitter.com/lmorchard)
+    ### Firefox OS: Web Native
+    [Slides](https://lmorchard.github.io/fxos-at-selfconference/)
+    [Code](https://github.com/lmorchard/fxos-at-selfconference)

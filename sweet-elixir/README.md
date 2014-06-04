@@ -10,7 +10,7 @@ Together we’ll take a guided tour of Elixir basics and functional programming 
 Whether you roll with a Mac, Windows or Linux everyone will leave an Elixir programmer.
 
 ### Slides
-[PDF](./Sweet Elixir - Short.pdf)
+[PDF](https://github.com/Selfconference/selfconf-2014/raw/master/sweet-elixir/Sweet%20Elixir%20-%20Short.pdf)
 
 [Speaker Deck](https://speakerdeck.com/cromwellryan/sweet-elixir-short)
 

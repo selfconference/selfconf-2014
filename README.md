@@ -26,3 +26,7 @@ Introduction to Twitter Bootstrap: [Live Site] (http://introtobootstrap.azureweb
 - [Adam Goodman](https://twitter.com/akgood) 
     ### Making Web Development "Secure By Default"
     [Slides](http://duo.sc/1jN2Z5b)
+
+- [Elmer Thomas](http://thinkingserious.com)
+    ### Quantify Thyself, then Go Forth and Conquer with a Personal Life API
+    [Blog](http://sendgrid.com/blog/quantify-thyself-creating-personal-life-api)

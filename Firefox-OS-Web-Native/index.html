@@ -1,0 +1,1575 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Firefox OS: Web Native</title>
+
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Les Orchard">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <!--
+        <link rel="stylesheet" href="css/theme/night.css" id="theme">
+        <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+        <link rel="stylesheet" href="css/theme/sky.css" id="theme">
+        -->
+        <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <link rel="stylesheet" href="css/local.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1>Firefox OS</h1>
+                    <h3>Web Native</h3>
+                    <p><small><a href="http://lmorchard.com">Les Orchard</a> / 
+                        <a href="http://twitter.com/lmorchard">@lmorchard</a></small></p>
+                    <p><small><a href="http://selfconference.org/">self.conference</a> / 
+                        Detroit / May 30, 2014</small></p>
+                </section>
+
+                <section>
+
+                    <section>
+                        <h2>Who am I?</h2>
+
+                        <p><img width="50%" src="img/me.jpg" alt="Me, cat pirate"></p>
+
+                        <p>{computer,web,mad} scientist</p>
+                        <p>{tech,scifi} writer</p>
+                        <p>home{brew,roast}er</p>
+                        <p><img src="img/Mozilla_dinosaur_head_logo.png" 
+                                style="height: 1em; margin: 0; border: 0; background: none"> Mozillian</p>
+
+                        <aside class="notes">
+                            Hi, my name is Les Orchard
+
+                            Here, you can see me in my natural habitat working at
+                            home with a cat climbing me.
+                            
+                            I’ve been a computer nerd since the 80’s, I found the
+                            web when I was in college in the 90’s, and that's what
+                            I've been doing ever since.
+                            
+                            These days I also like tinkering with random gadgets
+                            and electronics with blinking things
+                              
+                            I’ve gotten a few tech books published. I write little
+                            scifi stories, but I haven't gotten any of those
+                            published.
+                              
+                            I make beer and I roast coffee.
+                              
+                            Oh, and I work for Mozilla. Six years this month.
+                        </aside>
+
+                    </section>
+
+                    <section>
+                        <h2>What do I do?</h2>
+                        <p><img src="img/mdn-home.png"></p>
+
+                        <aside class="notes">
+                            Though I work at Mozilla, I don't work on Firefox.
+
+                            Though I have submitted a few pull requests to Firefox
+                            OS, I'm not a main contributor by a long shot. 
+                            
+                            Anybody here could fork the repo on GitHub and do the
+                            same thing.
+                            
+                            Mainly, I'm a web developer. And, right now, I'm
+                            working on developer.mozilla.org - or MDN.
+
+                            MDN is a big community maintained body of documentation
+                            for the Open Web.
+
+                            So, as context for this talk, I guess I want to say I'm
+                            mainly interested in Firefox OS as a fan and a web
+                            developer. 
+
+                            I just think all this stuff is really cool, and
+                            that's why I work at Mozilla.
+                            
+                            I'm hoping this doesn't come off as a sales pitch, even
+                            if most of what I'm talking about is free.
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Agenda</h2>
+
+                    <p>Mozilla &amp; Firefox OS</p>
+                    <p>Apps &amp; the Open Web</p>
+                    <p>Web APIs &amp; Web Activities</p>
+                    <p>Developer Tools</p>
+                    <p>Seriously, what about native?</p>
+                    <!--<p>Hacking Firefox OS</p>-->
+
+                    <aside class="notes">
+                        So, with the introductions out of the way, I just want
+                        to make sure that you're in the right room and I'm not
+                        wasting any more of your time.
+
+                        Here's a preview of what I'm going to cover today.
+
+                        (zoom out?)
+                    </aside>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>What is Mozilla?</h2>
+                        
+                        <blockquote cite="http://www.mozilla.org/en-US/mission/">
+                            &ldquo;Our mission is to promote openness,
+                            innovation &amp; opportunity on the Web.&rdquo;
+                        </blockquote>
+                        
+                        <p><img width="50%" src="img/Mozilla_dinosaur_head_logo.png"
+                            alt="Mozilla Dino Head"></p>
+
+                        <aside class="notes">
+                            We exist to bring an open and free and user-centric
+                            internet to everyone
+                             
+                            - Since anyone can implement the web, no single
+                            party can control it.
+                            
+                            - Mozilla's goal is to keep it that way
+
+                            - Firefox exists to be at least one of many
+                            independent implementations.
+
+                            - We fight to keep proprietary technologies - like
+                            patent encumbered video codecs - from becoming
+                            essential components of the web 
+                            
+                            We don't always win, but we fight.
+                            
+                            - Firefox OS was created, in part, to carry that
+                            mission onto mobile devices.
+
+                            (The dino head logo is officially deprecated, but I
+                            still really like it.)
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>What is Mozilla?</h2>
+
+                        <a href="http://bits.blogs.nytimes.com/2014/05/02/the-new-firefox-is-fantastic-so-is-every-other-web-browser/?_php=true&_type=blogs&_r=0" class="image">
+                            <img width="60%" src="img/firefox-is-fantastic.png">
+                        </a>
+
+                        <!--
+                        <p><a href="https://twitter.com/lmorchard/status/464433116380028928" target="_blank">Yeah,
+                            ensuring a fantastic Open Web is part of our mission.</a></p>
+                        -->
+
+                        <aside class="notes">
+                            And, just as a recent example of our mission, this
+                            was a review of the latest Firefox in the New York
+                            Times.
+
+                            This is actually a great headline from a Mozillian
+                            perspective.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>What is Mozilla?</h2>
+                        
+                        <blockquote cite="http://bits.blogs.nytimes.com/2014/05/02/the-new-firefox-is-fantastic-so-is-every-other-web-browser/?_php=true&_type=blogs&_php=true&_type=blogs&_r=1">
+                            &ldquo;As a result of the intense competition among
+                            browser makers — a fight incited by Mozilla, then
+                            joined by Apple, Google and, lately, by Microsoft,
+                            whose share of the browser market has plummeted in
+                            the last decade — <strong>desktop web browsers have
+                            improved vastly over the past few years</strong>. They’re
+                            now ferociously fast, they can load and keep open
+                            hundreds of tabs, they’re extremely stable and
+                            they’re capable of handling highly complex
+                            websites.&rdquo;<br><br>
+                            &mdash; Farhad Manjoo<br>
+                            <small>(<a href="http://bits.blogs.nytimes.com/2014/05/02/the-new-firefox-is-fantastic-so-is-every-other-web-browser/?_php=true&_type=blogs&_php=true&_type=blogs&_r=1">The New York Times, 2 May 2014</a>)</small>
+                        </blockquote>
+
+                        <aside class="notes">
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>What is Mozilla?</h2>
+                        
+                        <blockquote cite="http://www.mozilla.org/en-US/contribute/">
+                            &ldquo;The success of our mission depends on
+                            participation from <strong>people like you</strong>.&rdquo;
+                        </blockquote>
+
+                        <a href="https://www.google.com/search?q=mozilla+group+photo&client=firefox-aurora&hs=zNC&rls=org.mozilla:en-US:unofficial&channel=sb&source=lnms&tbm=isch&sa=X&ei=YOd8U-WMI8ySqgann4KQDA&ved=0CAgQ_AUoAQ&biw=1625&bih=949" class="image">
+                            <img width="66%" src="img/people.png">
+                        </a>
+                    
+                        <aside class="notes">
+                            Mozilla is made of people
+
+                            We are an international organization, and we're
+                            largely powered by volunteers
+                            
+                            I just googled "mozilla group photo" and took a
+                            screenshot
+
+                            I'm in a few of these photos, but most of them are
+                            from around the world in places I've never been 
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>What is Mozilla?</h2>
+                        <a href="http://thewebrocks.com/dinocards/#dino1" class="image">
+                            <img width="66%" src="img/dino-5.jpg">
+                        </a>
+                    
+                        <aside class="notes">
+                            - Mozilla is my dinosaur
+
+                            Mozilla is more than just a company. We're a
+                            passionate cloud of people. We care. And we tell
+                            each other bed time stories when we get together.
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>What is Firefox OS?</h2>
+
+                        <blockquote cite="https://developer.mozilla.org/en-US/Firefox_OS">
+                            &ldquo;Firefox OS is a new mobile operating system,
+                            developed by <strong>Mozilla</strong>, and based on <strong>Linux</strong> and the
+                            <strong>Gecko</strong> engine that powers <strong>Firefox</strong>.&rdquo;
+                        </blockquote>
+                        
+                        <p><img style="width: 50%; background: #eee"
+                                src="img/firefox-os_logo-wordmark_RGB-vertical.png" alt="Firefox OS logo"></p>
+                                
+                        <aside class="notes">
+                            In short, Firefox OS is built from the ground up to run Open Web Apps.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>What is Firefox OS?</h2>
+
+                        <blockquote cite="https://blog.mozilla.org/blog/2014/01/06/firefox-os-looking-ahead/">
+                            &ldquo;Mozilla’s strategy has been to build Firefox
+                            OS primarily for <strong>emerging markets</strong>, where there are
+                            still billions of people who have yet to experience
+                            their first smartphone.&rdquo;
+                        </blockquote>
+
+                        <a href="https://www.youtube.com/watch?feature=player_detailpage&v=qhgZdIYIXdg#t=260" class="image">
+                            <img style="width: 66%;"
+                            src="img/old-phones.png" alt="Firefox OS logo">
+                        </a>
+                        
+                        <aside class="notes">
+                            One of the goals is to get a capable smartphone
+                            into the hands of people who still use these old
+                            phones, at the same price point.
+
+                            Seriously, there are billions of people in this
+                            market.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>What is Firefox OS?</h2>
+
+                        <p class="phones" cite="https://blog.mozilla.org/press/media-library/screenshots/">
+                            <img src="img/phones/Alcatel_ONETOUCH_FIRE_C.jpg">
+                            <img src="img/phones/ZTE_Open_C_4.jpg">
+                            <img src="img/phones/ZTE_Open_II_1.jpg">
+                            <img src="img/phones/Huawei_Ascend_Y300_II_2.jpg">
+                            <img src="img/phones/Alcatel_ONETOUCH_FIRE_E_1.jpg">
+                            <img src="img/phones/ZTE-Open-Icon-Grid.png">
+                            <img src="img/phones/LG_Fireweb_FINAL-2.jpg">
+                            <img src="img/phones/ALCATEL-ONE-TOUCH-Fire-Icon-Grid.png">
+                        </p>
+
+                        <p>~7 mobile operator partners, ~3 hardware partners</p>
+                        
+                        <aside class="notes">
+                            And this is not vaporware. There are retail devices
+                            running Firefox OS available now. 
+                        
+                            In fact, first device was launched last July (2013).
+
+                            And now, I think we're up to at least 7 operator
+                            partners, 3 hardware partners. At least, that's
+                            what I've seen lately from my colleagues'
+                            presentations.
+
+                            Not to be a hipster, but you probably haven't heard
+                            of any of them, because they're pretty much all
+                            released outside the US.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>What is Firefox OS?</h2>
+
+                        <a href="https://www.youtube.com/watch?feature=player_detailpage&v=qhgZdIYIXdg#t=1320" class="image">
+                            <img style="width: 90%;"
+                            src="img/android-minus-java.png" alt="Firefox OS logo">
+                        </a>
+
+                        <h3><strong>Gonk</strong></h3>
+                        <h4>Linux &amp; Hardware Abstraction</h4>
+
+                        <h3><strong>Gecko</strong></h3>
+                        <h4>Firefox Core Engine</h4>
+
+                        <h3><strong>Gaia</strong></h3>
+                        <h4>Homescreen &amp; Core Apps</h4>
+
+                        <aside class="notes">
+                            Now, going under the hood, what is Firefox OS?
+
+                            Android - Java + Firefox = Firefox OS
+
+                            Gonk
+
+                            Linux kernel tweaks &amp; drivers from the Android
+                            Open Source Project
+                          
+                            Mainly a device porting layer, an adapter between
+                            hardware and Gecko
+                          
+                            Benefit from work in Android on hardware
+                            abstraction &amp; low-level tools
+                            
+                            Gecko - Firefox core engine
+                            
+                            FirefoxOS is AKA Boot to Gecko
+                            
+                            Gaia - Core apps &amp; overall UI, all HTML5
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+
+                    <section>
+                        <h2>What are Apps?</h2>
+                        <img style="width: 50%;"
+                            src="img/appetizer.jpg" alt="Firefox OS logo">
+                        <p>Appetizers!</p>
+
+                        <aside class="notes">
+                            So, we all know what the word "app" means, right?
+                            Appetizers!
+                        </aside>
+                    </section>
+
+                    <section data-transition="fade">
+                        <h2>What are Apps?</h2>
+                        <!-- https://www.flickr.com/photos/zandperl/11765267495 -->
+                        <img style="width: 50%;" src="img/appetizer-no.jpg">
+                        <p><strike>Appetizers!</strike></p>
+                        <p>No!</p>
+                    </section>
+
+                    <section>
+                        <h2>What are Apps?</h2>
+                        <h3>App<strike>lication</strike>s</h3>
+                        <blockquote class="fragment" cite="http://www.bogost.com/blog/what_is_an_app.shtml">
+                            &ldquo;...an "app" is really much more than just a
+                            shortened slang term. It's not just the term that's
+                            shortened, and it's not just the term that's
+                            slanged. <strong>It's also the application itself that's
+                            shortened and slanged</strong>...&rdquo; <br> 
+                            &mdash; <a href="http://www.bogost.com/blog/what_is_an_app.shtml">Ian Bogost</a> 
+                                <small>(21 Jan 2011)</small>
+                        </blockquote>
+                        <a href="http://en.wikipedia.org/wiki/Cow_Clicker" class="image">
+                            <img class="fragment" style="width: 25%;" src="img/Cow_Clicker_cover.png">
+                        </a>
+
+                        <aside class="notes">
+                            - App is short for "application".
+
+                            - But, there's a reason why we have a special word
+                            that's caught on.
+                            
+                            - Apps are a shortening of the very idea of
+                            applications.
+                            
+                            - It's like buying a single instead of the whole album. 
+                            
+                            - I took that notion from Ian Bogost -
+                            http://www.bogost.com/blog/what_is_an_app.shtml
+                            
+                            - Ian Bogost is the video game researcher who brought
+                            us Cow Clicker, a deconstructive parody of all Facebook
+                            games and addictive apps
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>What are Apps?</h2>
+                        <p>Single task</p>
+                        <p>Limited attention</p>
+                        <p>Focused UX</p>
+                        <p>Touch UI</p>
+                        <p>Cost $1 to $5 <br>
+                        <small>(<a href="http://gizmodo.com/5506939/the-50-wolfram-alpha-iphone-app-is-2-because-now-they-want-people-to-actually-buy-it">$50 is <em>really</em> pushing it</a>)</small></p>
+
+                        <aside class="notes">
+                            Apps tend to be focused on a single task
+
+                            Apps tend to have UI simplified for mobile and touch
+                            and smaller screens
+                            
+                            Apps tend to accommodate limited attention
+                            
+                            Apps tend to cost $1 or $5 or maybe $10, but that's
+                            pushing it
+                            
+                            Anyone remember the $50 Wolfram Alpha app that came
+                            out in Fall 2009? By spring 2010 it was $2
+                                
+                            And actually, if you remember even farther back,
+                            PalmOS had apps. 
+                            
+                            But, they sold for prices anywhere from $10 to
+                            $100. And, sometimes, you had to buy them on CDs
+                            that they sold in malls and you installed them with
+                            a HotSync cradle.
+
+                            ...
+
+                            Man, it's great living in the future.
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>What's the Open Web?</h2>
+
+                        <img style="width: 50%;" src="img/w3c_icon.svg">
+
+                        <aside class="notes">
+                            This is the logo for the World Wide Web Consortium.
+                            You may have seen it before during arguments about
+                            standards and suchlike.
+
+                            But, it might be easier to start by describing
+                            what's *not* open
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>What <strong>isn't</strong> the Open Web?</h2>
+
+                        <a href="http://en.wikipedia.org/wiki/App_Store_%28iOS%29" class="image">
+                            <img style="width: 80%;" src="img/Available_on_the_App_Store_(black).png">
+                        </a>
+
+                        <aside class="notes">
+                            Apple owns iOS and the underlying APIs &amp; frameworks
+
+                            - This translates into a captive App Store audience
+                            and taking a 30% cut.
+
+                            - Apple also restricts what you can buy and install
+                            based on where you are in the world - If you're
+                            outside the US, you might be out of luck.
+                            
+                            - That’s not to say you get nothing. The App Store
+                            is an undeniably effective machine for marketing
+                            and distributing iOS apps.
+                            
+                            - But, it's also the only way to market &amp;
+                            distribute iOS apps.
+                            
+                            - And iOS apps only work on Apple devices.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>What <strong>isn't</strong> the Open Web?</h2>
+                        <a href="http://en.wikipedia.org/wiki/Google_play" class="image">
+                            <img style="width: 80%;" src="img/Android-app-on-google-play.svg">
+                        </a>
+                        <a href="http://en.wikipedia.org/wiki/Amazon_App_Store" class="image">
+                            <img style="width: 80%;" src="img/amazon-appstore.png">
+                        </a>
+
+                        <aside class="notes">
+                            Google's Android is nifty, and it's published as open
+                            source. That's not bad.
+
+                            Like Apple, Google takes a 30% cut of apps sold
+                            through the Play Store - And, again, you get
+                            marketing and distribution help.
+                            
+                            Android works on many vendors' devices - you can
+                            even install an alternative App Store from Amazon.
+                            
+                            That's all miles better than Apple, IMO.
+                            
+                            But, and I'm really sorry if this sounds like FUD,
+                            there are catches that worry me:
+
+                            - For example, Android software runs on Dalvik. 
+                            - Dalvik is a reimplementation of Java.
+                            - They call it a "cleanroom" reimplementation, but
+                            that's in dispute.
+                            - Java is not entirely a free and open industry
+                            standard.
+                            
+                            - Java has complex licensing. Some of it is under
+                            the GPL. Some of it is not. Sun Microsystems wanted
+                            to encourage Java's spread, yet still have ways to
+                            tap in and make money.
+                            
+                            - These days, Oracle owns Java. They disagree that
+                            Google should be free to employ a clone of Java
+                            without paying a great deal of money for it.
+                            
+                            - http://arstechnica.com/information-technology/2010/08/oracles-java-lawsuit-undermines-its-open-source-credibility/
+                            - http://www.itworld.com/mobile-wireless/278559/java-creator-unhappy-oracle-trial-outcome
+
+                            Apple &amp; Google &amp; Oracle are big companies,
+                            so they can fight this out. 
+
+                            - But, personally, I hate feeling like my career
+                            &amp; industry is underfoot for those fights.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>What <strong>is</strong> the Open Web?</h2>
+
+                        <p style="background: #eee">
+                            <a href="http://www.w3.org/html/logo/" class="image"><img style="width: 20%; padding: 0.5em;" src="img/HTML5_Logo_256.png"></a>
+                            <a href="http://ohdoylerules.com/web/css3-badge-logo-in-svg" class="image"><img style="width: 14.5%; padding: 0.5em;" src="img/css3.svg"></a>
+                            <a href="https://github.com/voodootikigod/logo.js" class="image"><img style="width: 20%; padding: 0.5em;" src="img/js.png"></a>
+                        </p>
+
+                        <aside class="notes">
+                            No one owns the Open Web
+
+                            - Something to notice here is that there are no
+                            pictures of vendors or company logos here. Just
+                            technologies.
+
+                            - HTTP, HTML, CSS, and JavaScript were all created
+                            as open industry standards.
+                            
+                            - Anyone is free to create their own
+                            implementations of web technologies.
+                        </aside>
+                    </section>
+
+                </section>
+
+                <section>
+
+                    <section>
+                        <h2>Apps on the Web</h2>
+
+                        <a href="http://www.imore.com/history-app-store-year-zero" class="image">
+                            <img style="width: 80%; padding: 1em" src="img/ios_6_iphone_web_apps.jpg">
+                        </a>
+
+                        <aside class="notes">
+                            - Remember back when the iPhone first came out?
+                            Steve Jobs said iPhone apps *were* web apps
+
+                            - These things are as valid now as they were back
+                            in 2007.
+
+                            - On the Open Web, you don't need a
+                            gatekeeper. Just come to my site and you're running
+                            my code, from anywhere in the world.
+
+                            - That's called Code on Demand
+
+                            - Most iOS and Android apps require a full
+                            redownload to install a new version.
+
+                            - Some larger games only ship a patcher to the
+                            store and do their own resource management
+                            internally
+
+                            - I mean, I guess that's better than buying CDs at
+                            the mall and using a Palm HotSync cradle to install
+                            apps.
+                            
+                            - On the web, you don't need to download the whole
+                            thing, just fetch the code updates you need. You
+                            can do this with individual resources, or bundle
+                            things up.
+
+                            - Remember emerging markets and low bandwidth?
+
+                            - The web has mechanisms for caching and offline
+                            access - That's like the #1 question I hear.
+
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>The Web Wasn't Ready</h2>
+
+                        <blockquote style="font-size: 0.9em; width: 85%; line-height: 1.25em;"
+                                cite="http://daringfireball.net/2007/06/wwdc_2007_keynote">
+                            &ldquo;Telling developers that web apps are iPhone
+                            apps just doesn’t fly. Think about it this way: If
+                            web apps — <br>
+                            <br>
+                            <strong>which are only accessible over a network; <br>
+                            <br>
+                                which don’t get app icons in the iPhone home screen; <br> 
+                            <br>
+                                which don’t have any local data storage</strong><br> 
+                            <br>
+                            — are such a great way to write software for iPhone, <br>
+                            <strong>then why isn’t Apple using this
+                                technique for any of their own iPhone apps?</strong>&rdquo;
+                            <br><br>&mdash; John Gruber<br>
+                                <small>(<a href="http://daringfireball.net/2007/06/wwdc_2007_keynote">Daring Fireball, 11 Jun 2007</a>)</small>
+                        </blockquote>
+
+                        <aside class="notes">
+                            Now, of course, back in 2007, the web wasn't ready
+                            for apps. 
+
+                            Everything John Gruber says here was true about the web
+                            of 2007.
+
+                            Web apps didn't work offline.
+
+                            They didn't have local data storage.
+
+                            And they didn't easily appear on anyone's home
+                            screen, iPhone or otherwise.
+
+                            But, friends of the Open Web took these failings as
+                            challenges.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>HTML5 APIs</h2>
+                        <table class="reveal col3">
+                            <tbody>
+                                <tr>
+                                    <td>localStorage</td>
+                                    <td rowspan="8">
+                                        <a href="http://www.w3.org/html/logo/" class="image">
+                                            <img style="width: 80%; margin: 0.5em; padding: 0.5em;" 
+                                                 src="img/HTML5_Logo_256.png">
+                                        </a>
+                                    </td>
+                                    <td>Offline</td>
+                                </tr><tr>
+                                    <td>IndexedDB</td>
+                                    <td>AppCache</td>
+                                </tr><tr>
+                                    <td>History</td>
+                                    <td>Video</td>
+                                </tr><tr>
+                                    <td>Geolocation</td>
+                                    <td>Audio</td>
+                                </tr><tr>
+                                    <td>Touch Events</td>
+                                    <td>Canvas</td>
+                                </tr><tr>
+                                    <td>Drag and Drop</td>
+                                    <td>WebGL</td>
+                                </tr><tr>
+                                    <td>Web Workers</td>
+                                    <td>Media Capture</td>
+                                </tr><tr>
+                                    <td>Web Sockets</td>
+                                    <td>WebRTC</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <aside class="notes">
+                            And this is what happened. Things have changed
+                            since 2007.
+
+                            HTML5 brought with it a raft-load of new APIs that
+                            most of the browser makers started implementing.
+
+                            Now, web apps *do* work offline and they *do* have
+                            local data storage.
+
+                            In fact, they now have access to all sorts of
+                            capabilities like multimedia, 2D &amp; 3D graphics,
+                            as well as a growing array of ways to communicate
+                            over the web.
+
+                            (ramble about some APIs if there's time?)
+
+                            And there's a bunch of APIs I'm leaving out.
+                            
+                            But, there's still a lot of work left to do.
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>"Add to home screen"</h2>
+
+                        <p>
+                            <a href="https://developer.chrome.com/multidevice/android/installtohomescreen"><img 
+                                src="img/android-add-to-homescreen-2.png" style="width: 33%"></a>
+                            <a href="http://www.lundalogik.com/crm-systems/apps-for-lime/lime-web-app/"><img
+                                src="img/iOS-add-to-homescreen.png" style="width: 33%"></a>
+                        </p>
+
+                        <aside class="notes">
+                            Remember that thing about web apps not showing up
+                            on home screens?
+
+                            Well, you've been able to put an icon on the home
+                            screen from mobile browsers for awhile now.
+                            
+                            It's hard to discover, but it mostly works.
+                            
+                            Apple even established an HTML link relation
+                            (apple-touch-icon) for specifying what that icon
+                            should look like.
+                            
+                            But really that's the bare minimum of what you need
+                            to "install" a web app: It's a bookmark.
+
+                            But, there's definitely room for improvement.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Adaptive App Search</h2>
+
+                        <p><img src="img/fx-app-search.png"></p>
+
+                        <aside class="notes">
+                            But, since these are just web apps, Firefox OS does
+                            something interesting on the home screen.
+
+                            This is called "adaptive app search": you can
+                            search for and launch apps and content right from
+                            the home screen without bookmarking or formally
+                            installing them first. 
+                            
+                            There's that code-on-demand thing that the web's
+                            good at.
+
+                            If you like what you find, you can add it to your
+                            home screen for easy access later.
+
+                            (This is a press release photo, by the way, so it's
+                            a bit of a glamour shot. I have a real phone on me,
+                            so I can show you how it works later. It's pretty
+                            much like that though.)
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Build Your Own Marketplace</h2>
+
+                        <a href="https://marketplace.firefox.com"><img src="img/fx-marketplace.png"
+                            style="width: 80%"></a>
+
+                        <aside class="notes">
+                            But even with an app search on your home screen,
+                            having a place to browse for reviewed apps to
+                            is handy.
+
+                            This is marketplace.firefox.com, the default app
+                            marketplace for Firefox OS.
+
+                            This is also all open source, based on open APIs.
+
+                            Seriously, you can build your app store, if you
+                            wanted to.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Build Your Own Marketplace</h2>
+
+                        <a href="https://marketplace.firefox.com"><img src="img/fx-marketplace-button.png"
+                            style="width: 80%"></a>
+
+                        <aside class="notes">
+                            Here's the detail page for an app.
+
+                            There's a button there, marked "Free". That's what
+                            you click to install the app. I'll show you the
+                            code behind this button in a little bit.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Build Your Own Marketplace</h2>
+
+                        <a href="https://marketplace.firefox.com"><img src="img/fx-marketplace-install.png"
+                            style="width: 80%"></a>
+
+                        <aside class="notes">
+                            And, when you click the button, Firefox asks you if
+                            you really want to install the app.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Build Your Own Marketplace</h2>
+
+                        <a href="https://marketplace.firefox.com"><img src="img/fx-marketplace-installed.png"
+                            style="width: 70%"></a>
+
+                        <aside class="notes">
+                            I say yes, and it ends up in my Applications folder.
+
+                            Now wait. Isn't this supposed to be about Firefox OS?
+
+                            Well, yes, it it. But, The thing about these Open
+                            Web Apps is that they don't just have to live on phones.
+
+                            It's the web. It's everywhere.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Run <strike>Everywhere</strike> a Bunch of Places</h2>
+
+                        <a href="https://marketplace.firefox.com"><img src="img/fx-crossplatform.png"
+                            style="width: 95%"></a>
+
+                        <aside class="notes">
+                            Well, a bunch of places anyway.
+
+                            In fact, here are some quick screenshots where I
+                            installed another clock app on Firefox OS, Android,
+                            Ubuntu, and OS X.
+
+                            Basically, all fine OSes where Firefox can be found.
+
+                            Unfortunately, that does not so far include iOS.
+
+                            It does include Windows, but I forgot to take a
+                            screenshot for Windows.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>The Open Web App Manifest</h2>
+
+                        <p><code>https://my-app.example.com/manifest.webapp</code></p>
+                        <p><code style="font-size: 0.8em">Content-Type: <a href="https://developer.mozilla.org/en-US/Apps/Build/Manifest">application/x-web-app-manifest+json</a></code></p>
+                        <pre style="width: 66%"><code data-trim>
+{
+  "name": "My App",
+  "description": "My elevator pitch goes here",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/img/icon-128.png"
+  },
+  "developer": {
+    "name": "Your name or organization",
+    "url": "http://your-homepage-here.org"
+  },
+  "default_locale": "en"
+}
+                        </code></pre>
+
+                        <aside class="notes">
+                            So, even though "installing" a web app doesn't need
+                            to be more than a bookmark with special UI, it can
+                            be more.
+
+                            This is what we're calling an "Open Web App Manifest".
+
+                            It's a JSON file that lives on your web server at a
+                            public URL, and it describes a web app.
+
+                            These are some of the basics, like: Name,
+                            description, the home page, some icons, and some
+                            details on the developer.
+
+                            There's a lot more that can go in here. But, I'll
+                            get to that in a bit.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Installing an Open Web App</h2>
+
+                        <pre style="width: 75%"><code data-trim>
+var manifestUrl = 'https://my-app.example.com/manifest.webapp';
+
+var request = window.navigator.mozApps.install(manifestUrl);
+
+request.onsuccess = function () {
+  // Save the App object that is returned
+  var appRecord = this.result;
+  alert('Installation successful!');
+};
+
+request.onerror = function () {
+  // Display the error information from the DOMError object
+  alert('Install failed, error: ' + this.error.name);
+};
+                        </code></pre>
+
+                        <aside class="notes">
+                            Here's how you install an open web app using its
+                            manifest.
+
+                            This is the code behind the install button on the
+                            Firefox Marketplace.
+
+                            You can use this code, too. Wire it up to a button
+                            on your own web page, and you've got an app store.
+
+                            It's an API that Mozilla has proposed as a new open
+                            standard.
+
+                            And like I said, this works on desktop as well as
+                            mobile.
+
+                            This is Mozilla's answer to "Add to home screen".
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Web APIs</h2>
+                        <p><a href="https://wiki.mozilla.org/WebAPI"><img src="img/hardware-blowup.png"></a></p>
+                        <aside class="notes">
+                            Speaking of proposed APIs...
+
+                            Remember when I said that HTML5 filled in a lot of
+                            the gaps that made the web ready for apps?
+
+                            Well, there's still a lot more work to do.
+
+                            It turns out that smartphones and tablets and
+                            laptops have grown a lot of interesting
+                            capabilities over the years.
+
+                            They've got accelerometers and compasses and
+                            multiple radios and multi-touch screens and... well we're
+                            going to need to give the web some more APIs
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Web APIs</h2>
+                        <table class="reveal col3 smaller">
+                            <tr>
+                                <td>Web Activities</td>
+                                <td>Network Information</td>
+                                <td>Battery Status</td>
+                            </tr><tr>
+                                <td>Screen Orientation</td>
+                                <td>Device Orientation</td>
+                                <td>Ambient Light</td>
+                            </tr><tr>
+                                <td>Proximity Sensor</td>
+                                <td>Device Storage</td>
+                                <td>FM Radio</td>
+                            </tr><tr>
+                                <td>Alarm</td>
+                                <td>Vibration</td>
+                                <td>Notifications</td>
+                            </tr><tr>
+                                <td>Gamepad</td>
+                                <td>Payment</td>
+                                <td>TCP Sockets</td>
+                            </tr><tr>
+                                <td>Telephony</td>
+                                <td>SMS</td>
+                                <td>Push</td>
+                            </tr>
+                        </table>
+
+                        <aside class="notes">
+                            And here's a wall of words. 
+                            
+                            They name some - but not all - of the additional
+                            APIs that Mozilla is working to add to the Open Web
+                            platform.
+
+                            The plan is to get each of these things and more
+                            working in practical applications, then work to
+                            turn them into open industry standards. In fact,
+                            some of these already are on a standards track.
+
+                            I'm not going to go through all of these, but I'll
+                            highlight a few of them to give you a taste.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Web APIs</h2>
+                        <h3>Vibration API</h3>
+
+                        <pre style="width: 55%"><code data-trim>
+window.navigator.vibrate(200);
+window.navigator.vibrate([200, 100, 200]);
+                        </code></pre>
+
+                        <aside class="notes">
+                           So. when I say "add to the Open Web platform", I
+                           mean something like this. 
+
+                           You don't need to install a special plugin or SDK.
+                           This comes out of the box with the browser and
+                           the web app runtime (otherwise known as Gecko).
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Web APIs</h2>
+                        <h3>Battery Status API</h3>
+
+                        <pre style="width: 80%"><code data-trim>
+var battery = navigator.battery ||
+              navigator.mozBattery || navigator.webkitBattery;
+
+function updateBatteryStatus() {
+  console.log("Battery status: " + battery.level * 100 + " %");
+
+  if (battery.charging) {
+    console.log("Battery is charging"); 
+  }
+}
+
+battery.addEventListener("chargingchange", updateBatteryStatus);
+battery.addEventListener("levelchange", updateBatteryStatus);
+updateBatteryStatus();
+                        </code></pre>
+
+                        <aside class="notes">
+                            And here's a more complex example. 
+                            
+                            You can see that the feature is used here with moz
+                            and webkit prefixes, because it's on its way to
+                            becoming an official standard. 
+                            
+                            But, you can see this works much like any other web
+                            API, using event listners and such.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Web APIs</h2>
+                        <h3>Screen Orientation API</h3>
+
+                        <pre style="width: 80%"><code data-trim>
+/* For portrait, we want the tool bar on top */
+@media screen and (orientation: portrait) {
+  #toolbar { width: 100%; }
+}
+
+/* For landscape, we want the tool bar stick on the left */
+@media screen and (orientation: landscape) {
+  #toolbar { position: fixed; width: 2.65em; height: 100%; }
+}
+                        </code></pre>
+
+                        <pre style="width: 80%"><code data-trim>
+var screen = window.screen;
+
+screen.addEventListener("orientationchange", function () {
+  console.log("The orientation of the screen is: " +
+              screen.orientation);
+});
+
+screen.lockOrientation('landscape');
+                        </code></pre>
+
+                        <aside class="notes">
+                            Some of these APIs are actually useful in both CSS and JavaScript.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Web APIs</h2>
+                        <h3>Device Orientation API</h3>
+
+                        <pre style="width: 80%"><code data-trim>
+function handleOrientation(event) {
+  var absolute = event.absolute;
+  var z_rot    = event.alpha;
+  var x_rot    = event.beta;
+  var y_rot    = event.gamma;
+
+  // Do stuff with the new orientation data
+}
+
+window.addEventListener("deviceorientation", handleOrientation,
+                        true);
+                        </code></pre>
+
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Orientation_and_motion_data_explained"><img 
+                            src="img/axes.png" style="width: 33%"></a>
+
+                        <aside class="notes">
+                            There's also a Device Orientation API. Which,
+                            though it influences Screen Orientation, is exposed
+                            as its own API as well.
+
+                            Here, you can see some quick code that responds to
+                            changes in the device's orientation by listening
+                            for a "deviceorientation" event.
+
+                            There's also a "devicemotion" event that reports on
+                            physicaly acceleration on all three axes, as well
+                            as the rate of rotation on those axes.
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Web Activities</h2>
+                        <p>
+                            <img src="img/web-act-boilerplate.png">
+                            <img src="img/web-act-pick.png">
+                        </p>
+                        <aside class="notes">
+                            So this is a particularly interesting Web API. It
+                            enables you to call on other apps as APIs. 
+                            
+                            But, you as the app developer don't need to be
+                            aware of any other apps in particular.
+
+                            It centers around activities, like picking an
+                            image. Multiple apps can register to handle that
+                            activity, but the user gets to choose which one
+                            will satisfy the request.
+
+                            In other words, it means that this app here on the
+                            left can delegate finding an image to one of the
+                            apps listed on the right.
+
+                            It also helps reduce the number of apps that need
+                            access to hardware. If I can just pick an image
+                            from the gallery or launch the camera app, then my
+                            app doesn't need camera hardware access itself.
+
+                            This API is inspired by Intents on Android, and in
+                            fact I think there is work to allow web apps on
+                            Android to use Intents via the Web Activities API.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Web Activities</h3>
+                        <pre style="width: 70%"><code data-trim>
+{
+  // Other App Manifest related stuff
+
+  // Activity registration
+  "activities": {
+
+    // The name of the activity to handle (here "pick")
+    "pick": {
+      "href": "./pick.html",
+      "disposition": "inline",
+      "filters": {
+        "type": ["image/*","image/jpeg","image/png"]
+      },
+      "returnValue": true
+    }
+  }
+}
+                        </code></pre>
+
+                        <aside class="notes">
+                            Remember when I mentioned earlier that an Open Web
+                            App manifest could contain a bunch of other things?
+
+                            Declaring what activities an app can handle is
+                            one of those things.
+
+                            You can also specify more details about the
+                            situations where your app is relevant to the
+                            activity - like the content type filter shown here.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Web Activities</h2>
+                        <pre style="width: 90%"><code data-trim>
+navigator.mozSetMessageHandler('activity', function(activityRequest) {
+  var option = activityRequest.source;
+
+  if (option.name === "pick") {
+    // Do something to handle the activity
+    ...
+
+    // Send back the result
+    if (picture) {
+      activityRequest.postResult(picture);
+    } else {
+      activityRequest.postError("Unable to provide a picture");
+    }
+  }
+});
+                        </code></pre>
+
+                        <aside class="notes">
+                            And then, you can use code like this in an app to
+                            handle activity requests.
+                        </aside>
+
+                    </section>
+
+                    <section>
+                        <h2>Web Activities</h2>
+                        <pre style="width: 70%"><code data-trim>
+var activity = new MozActivity({
+  // Ask for the "pick" activity
+  name: "pick",
+
+  // Provide the data required by 
+  // the filters of the activity
+  data: { type: "image/jpeg" }
+});
+
+activity.onsuccess = function() {
+  var picture = this.result;
+  console.log("A picture has been retrieved");
+};
+
+activity.onerror = function() {
+  console.log(this.error);
+};
+                        </code></pre>
+
+                        <aside class="notes">
+                            On the other side of things, you can kick off an
+                            activity with code like this.  
+                            
+                            Notice that this asks for both an activity by name
+                            and specifies the content type required.
+
+                            This matches up with the filters declared in the
+                            app manifest.
+
+                            If this code had been asking for an audio file,
+                            rather than an image, then the registered app would
+                            not have been presented as a choice to the user.
+                        </aside>
+
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Packaged Apps</h2>
+
+                        <blockquote cite="https://developer.mozilla.org/en-US/Marketplace/Options/Packaged_apps">
+                            &ldquo;A packaged app is an Open Web App that has
+                            all of its resources (HTML, CSS, JavaScript, app
+                            manifest, and so on) <strong>contained in a zip file</strong>,
+                            instead of having its resources on a Web
+                            server.&rdquo;
+                        </blockquote>
+                        <aside class="notes">
+                            Now, I know I really played up the whole thing
+                            about code on demand earlier.
+
+                            In Firefox OS, plain web apps found on web servers
+                            are called Hosted apps.
+
+                            But, some apps benefit from being bundled up in one
+                            compound resource as a .zip file.
+
+                            For one, you can cryptographically sign the whole
+                            bundle in order to make the app tamper resistant.
+
+                            These .zip bundles are called Packaged apps.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Privileged Apps</h2>
+
+                        <blockquote cite="https://developer.mozilla.org/en-US/Marketplace/Options/Packaged_apps#Privileged_app">
+                            &ldquo;<strong>A privileged app is one that makes use of privileged APIs</strong> ...
+                            When submitted to the Firefox Marketplace,
+                            privileged apps are approved using a special
+                            process. This process gives users of the app a
+                            level of assurance that the app has been carefully
+                            reviewed for potential security, privacy and
+                            capability issues.&rdquo;
+                        </blockquote>
+                        <aside class="notes">
+                            So, with signed, packaged apps in mind: Firefox OS
+                            restricts usage of a handful of Web APIs.
+                            
+                            Only packaged apps that have been reviewed by the
+                            Firefox Marketplace team can use these select APIs.
+
+                            These apps are called Privileged apps.
+
+                            For the most part, these APIs include things
+                            that access your personal data like contacts or
+                            files in device storage such as photos or music.
+
+                            This sounds a bit like the approval-based app store
+                            model used by Apple and Google.
+                            
+                            But, keep in mind that most apps can get away with
+                            never touching privileged APIs. 
+                            
+                            In fact, for the most part, they can get delegated
+                            access to sensitive data by using Web Activities
+                            that call on already-approved core apps.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Permissions</h2>
+                        <pre style="width: 70%"><code data-trim>
+"permissions": {
+  "contacts": {
+    "description": "Required for autocompletion",
+    "access": "readcreate"
+  },
+  "alarms": {
+    "description": "Required to schedule notifications"
+  }
+}
+                        </code></pre>
+                        <aside class="notes">
+                            And when you do need to use privileged APIs,
+                            there's an optional "permissions" key in the Open
+                            Web App manifest where you need to list out what
+                            your app plans to use.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Certified Apps</h2>
+
+                        <blockquote cite="https://developer.mozilla.org/en-US/Marketplace/Options/Packaged_apps#Certified_app">
+                            &ldquo;<strong>A certified app is one that makes used of
+                                certified APIs</strong>, APIs that offer access to critical
+                            system function such as the default dialer or the
+                            system settings app on a device. ... A certified app must be
+                            approved for a device by the OEM or carrier.&rdquo;
+                        </blockquote>
+                        <aside class="notes">
+                            There's also a Certified class of packaged apps.
+                            These get access to even more sensitive APIs like
+                            device settings or making phone calls. These are
+                            generally a core part of Firefox OS itself,
+                            maintained by Mozilla or the device manufacturer.
+
+                            But, like I just mentioned earlier, this is where Web
+                            Activities can come into play.
+                        </aside>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Developer tools</h2>
+                        <p>{ live demo goes here }</p>
+                        <aside class="notes">
+                            Now, I'm going to attempt to show a quick live demo
+                            of the Developer Tools in Firefox with a real
+                            Firefox OS device.
+
+                            In case it fails, I have some boring backup
+                            screenshots to show. But let's hope it works.
+
+                            - install fxos simulator addon
+                            - install fxos simulators (1.4, 2.0, adb helper)
+                            - show phone connection
+                            - install the fxos boilerplate app
+                                https://github.com/robnyman/Firefox-OS-Boilerplate-App
+                            - install on phone
+                            - modify live DOM on phone
+                            - use Photo Booth to show the changes?
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Developer tools</h2>
+                        <img src="img/dev-tools-addon.png">
+                        <aside class="notes">
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Developer tools</h2>
+                        <img src="img/dev-tools-app-manager.png">
+                        <aside class="notes">
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Developer tools</h2>
+                        <img style="width: 50%" src="img/dev-tools-simulator.png">
+                        <aside class="notes">
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Developer tools</h2>
+                        <img src="img/dev-tools-connected.png">
+                        <aside class="notes">
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Developer tools</h2>
+                        <img src="img/dev-tools-app-before.png">
+                        <aside class="notes">
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Developer tools</h2>
+                        <img src="img/dev-tools-inspector.png">
+                        <aside class="notes">
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Developer tools</h2>
+                        <img src="img/dev-tools-inspector-after.png">
+                        <aside class="notes">
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Developer tools</h2>
+                        <img src="img/dev-tools-app-after.png">
+                        <aside class="notes">
+                        </aside>
+                    </section>
+
+                </section>
+
+                <section>
+                    <h2>What about native?</h2>
+                    <iframe width="853" height="480" src="//www.youtube.com/embed/BV32Cs_CMqo" frameborder="0" allowfullscreen></iframe>
+
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <!--
+                <section>
+                    <h2>Hacking Firefox OS</h2>
+                    <p>...</p>
+                    <aside class="notes">
+                        ...
+                    </aside>
+                </section>
+                -->
+
+                <section>
+                    <h2>Thank you!</h2>
+                    <p><img width="50%" src="img/squirrel-cat.jpg"></p>
+                    <p>
+                        <small><a href="http://lmorchard.com">Les Orchard</a> / 
+                            <a href="http://twitter.com/lmorchard">@lmorchard</a></small>
+                    </p>
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+            Reveal.addEventListener( 'slidechanged', function( event ) {
+                // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+                var notes = event.currentSlide.querySelector(".notes");
+                if(notes) {
+                    console.info(notes.innerHTML.replace(/\n\s+/g,'\n'));
+                }
+            } );
+
+        </script>
+
+    </body>
+</html>

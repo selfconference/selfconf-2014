@@ -1,0 +1,27 @@
+.reveal blockquote {
+    width: 80%;
+}
+.reveal section p.phones {
+    display: block;
+    background-color: #eee;
+    padding: 0.5em;
+}
+.reveal section p.phones img {
+    width: 18%; margin: 1px; border: none; background: none
+}
+strike {
+    opacity: 0.33;
+}
+.reveal strong {
+    text-shadow: #333 5px 5px;
+}
+table.col3 td {
+    text-align: center;
+    width: 33%;
+}
+table.col3 td img {
+    vertical-align: text-top;
+}
+table.smaller td {
+    font-size: 0.8em
+}
